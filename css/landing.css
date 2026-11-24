@@ -1,0 +1,155 @@
+/* ==========================================================================
+   PAGE ONE — THE APOLOGY (LANDING)
+   Spacious Layout with clear botanical garden visibility
+   ========================================================================== */
+
+.landing-section {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 clamp(1.5rem, 6vw, 6rem);
+}
+
+.landing-content-wrap {
+  position: relative;
+  z-index: 10;
+  max-width: 580px; /* Constrained width so the flowers on the right breathe openly */
+  padding: 2rem 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 1.5rem;
+  padding: 6px 14px;
+  background: rgba(197, 167, 139, 0.08);
+  border: 1px solid rgba(197, 167, 139, 0.22);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--warm-white);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 24px rgba(8, 8, 9, 0.8);
+}
+
+.hero-subheading {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+  color: var(--dusty-rose);
+  margin-bottom: 2.2rem;
+  font-weight: 300;
+  text-shadow: 0 2px 14px rgba(8, 8, 9, 0.7);
+}
+
+.hero-prose {
+  margin-bottom: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: rgba(8, 8, 9, 0.45);
+  border-radius: var(--radius-sm);
+  padding: 1rem 0;
+  backdrop-filter: blur(4px);
+}
+
+.hero-apology-main {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+  color: rgba(242, 234, 232, 0.95);
+  font-weight: 300;
+  border-left: 2px solid rgba(182, 107, 131, 0.6);
+  padding-left: 1.5rem;
+}
+
+.hero-apology-sub {
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--muted-grey);
+  padding-left: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-audio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(17, 16, 20, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 12px 20px;
+  font-size: 0.82rem;
+  color: var(--muted-grey);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hero-audio-pill:hover, .hero-audio-pill.active {
+  border-color: rgba(182, 107, 131, 0.5);
+  color: var(--warm-white);
+  background: rgba(104, 29, 50, 0.3);
+}
+
+.sound-wave-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 14px;
+}
+
+.sound-wave-icon span {
+  width: 2px;
+  height: 100%;
+  background: var(--dusty-rose);
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite alternate;
+}
+
+.sound-wave-icon span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+.sound-wave-icon span:nth-child(3) { animation-delay: 0.4s; height: 80%; }
+
+@keyframes wave {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .landing-section {
+    padding: 1.5rem 1.25rem 3.5rem 1.25rem;
+    align-items: flex-end; /* Text sits elegantly beneath flowers on mobile */
+    min-height: calc(100vh - var(--header-height));
+  }
+
+  .landing-content-wrap {
+    max-width: 100%;
+    background: linear-gradient(to top, rgba(8, 8, 9, 0.95) 0%, rgba(8, 8, 9, 0.7) 70%, transparent 100%);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 1rem;
+  }
+  
+  .hero-apology-main, .hero-apology-sub {
+    padding-left: 1rem;
+  }
+}

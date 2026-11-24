@@ -1,0 +1,225 @@
+/* ==========================================================================
+   PAGE TWO — THINGS I WANT YOU TO KNOW (REASSURANCE)
+   ========================================================================== */
+
+.reassurance-section {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 5vw, 4rem) 6rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem auto;
+}
+
+.section-eyebrow {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--warm-white);
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  color: var(--muted-grey);
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* Reassurance Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 5rem;
+}
+
+.reassurance-card {
+  position: relative;
+  background: rgba(17, 16, 20, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.4s var(--transition-smooth), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-ambient-glow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--burgundy-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.reassurance-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(182, 107, 131, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.reassurance-card:hover .card-ambient-glow,
+.reassurance-card.expanded .card-ambient-glow {
+  opacity: 1;
+}
+
+.reassurance-card.expanded {
+  border-color: var(--dusty-rose);
+  background: rgba(25, 24, 29, 0.85);
+  box-shadow: 0 12px 40px var(--burgundy-glow);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.card-number {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--champagne);
+  opacity: 0.8;
+}
+
+.card-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted-grey);
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 500;
+  color: var(--warm-white);
+  margin-bottom: 0.85rem;
+  line-height: 1.25;
+}
+
+.card-quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dusty-rose);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.card-body-wrapper {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--transition-smooth), opacity 0.4s ease;
+}
+
+.reassurance-card.expanded .card-body-wrapper {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(242, 234, 232, 0.06);
+}
+
+.card-body {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(242, 234, 232, 0.85);
+}
+
+.card-footer {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--muted-grey);
+  transition: color 0.3s ease;
+}
+
+.reassurance-card:hover .card-hint,
+.reassurance-card.expanded .card-hint {
+  color: var(--dusty-rose);
+}
+
+.reassurance-card.expanded .card-hint svg {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* Final Reveal After Cards */
+.final-reassurance-reveal {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+  background: radial-gradient(circle, rgba(104, 29, 50, 0.22) 0%, rgba(17, 16, 20, 0.4) 70%);
+  border: 1px solid rgba(182, 107, 131, 0.25);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0.6;
+  transform: translateY(10px);
+  transition: all 0.6s var(--transition-smooth);
+}
+
+.final-reassurance-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  border-color: rgba(182, 107, 131, 0.5);
+  box-shadow: 0 10px 40px var(--burgundy-glow);
+}
+
+.reveal-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+  font-weight: 400;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+}
+
+.reveal-subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted-grey);
+  margin-bottom: 2.2rem;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
